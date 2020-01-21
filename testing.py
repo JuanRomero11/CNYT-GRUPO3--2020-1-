@@ -37,6 +37,41 @@ class Testlaboratorio(unittest.TestCase):
         
     def testPolar(self):
         self.assertEqual(laboratorio1.polar((3,80)),(80.05623023850174,1.533313890103235))
+        
+    def testSumaVectoresComplejo(self):
+        self.assertEqual(laboratorio1.sumaVectoresComplejo([(6,-4),(7,3),(4,-8),(0,-3)],[(16,3),(0,-7),(6,0),(0,-4)]),[(22, -1), (7, -4), (10, -8), (0, -7)])
+
+    def testInversaDeUnVector(self):
+        self.assertEqual(laboratorio1.InversaDeUnVector([(2,6)]),[(-2, -6)])
+        
+    def testEscalarPorVector(self):
+        self.assertEqual(laboratorio1.EscalarPorVector((2,6),[(2,5),(4,2)]),[(-26, 22), (-4, 28)])
+        
+    def testSumaMatrices(self):
+        matrizUno,matrizDos=[[(2,6),(-1,3)],[(3,9),(2,-2)]],[[(1,4),(4,7)],[(1,1),(0,5)]]
+        self.assertEqual([[(3, 10), (3, 10)], [(4, 10), (2, 3)]],laboratorio1.sumaMatrices(matrizUno,matrizDos))
+    
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 if __name__ == "__main__":
     unittest.main()
