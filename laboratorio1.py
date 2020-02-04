@@ -118,7 +118,7 @@ def distanciaMatrices(mat1,mat2):
 ##def unitaria(mat):
 # EnConstruccion
 ##def normaMatriz(mat):
-def productoTensorialImaginario(matriz1,matriz2):
+def productoTensor(matriz1,matriz2):
     matriz = []
     for i in range(len(matriz1)):
         matM = [[]] *len(matriz2)
