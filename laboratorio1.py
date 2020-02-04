@@ -121,14 +121,14 @@ def distanciaMatrices(mat1,mat2):
 def productoTensor(matriz1,matriz2):
     matriz = []
     for i in range(len(matriz1)):
-        matM = [[]] *len(matriz2)
-        for j in range(len(matriz1[i])):
-            m3 = complejoPorMatriz(matriz1[i][j],matriz2)
-            for k in range(len(matriz2)):
-                
-                matM[k] = matM[k] + m3[k]
-        for k in range(len(matriz2)):
-            matriz.append(matM[k])
+        for j in range(len(matriz2)):
+            matM = [] 
+            
+            for k in range(len(matriz1[i])):
+                for y in range(len(matriz2[j])):
+                    matM.append(multiplicacion(matriz1[i][k],matriz2[j][y]))
+            matriz.append(matM)
+    
     return matriz
 
 def hermitiana(mat):
@@ -136,6 +136,9 @@ def hermitiana(mat):
         return True
     else:
         return False
+m=[[(1/(2**(0.5)),0),(1/(2**(0.5)),0)],[(1/(2**(0.5)),0),(-1/(2**(0.5)),0)]]
+m1=[[(0,0),(1,0)],[(1,0),(0,0)]]
+print(productoTensor(m,m1))
 
 
     

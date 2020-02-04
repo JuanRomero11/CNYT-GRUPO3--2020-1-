@@ -66,9 +66,11 @@ class Testlaboratorio(unittest.TestCase):
 
     #   Faltan pruebas de las funciones productoVectoresImaginarios, matrizAdjunta,productoMatricesImaginarias,accionMatrizSobreVector, distanciaMatrices,hermitiana
 
-
-
-
+    def testProductoTensor(self):
+        oo=[[(1,0)],[(0,0)],[(0,0)],[(0,0)]]
+        h=[[(1/(2**0.5),0)],[(1/(2**0.5),0)],[(1/(2**0.5),0)],[(-1/(2**0.5),0)]]
+        x=[[(0,0),(1,0)],[(1,0),(0,0)]]
+      
 
 
 
