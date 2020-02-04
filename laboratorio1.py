@@ -118,8 +118,18 @@ def distanciaMatrices(mat1,mat2):
 ##def unitaria(mat):
 # EnConstruccion
 ##def normaMatriz(mat):
-#EnConstruccion
-##def producTensorVec(vec1,vec2):
+def productoTensorialImaginario(matriz1,matriz2):
+    matriz = []
+    for i in range(len(matriz1)):
+        matM = [[]] *len(matriz2)
+        for j in range(len(matriz1[i])):
+            m3 = complejoPorMatriz(matriz1[i][j],matriz2)
+            for k in range(len(matriz2)):
+                
+                matM[k] = matM[k] + m3[k]
+        for k in range(len(matriz2)):
+            matriz.append(matM[k])
+    return matriz
 
 def hermitiana(mat):
     if mat==mat_adjun(mat):
