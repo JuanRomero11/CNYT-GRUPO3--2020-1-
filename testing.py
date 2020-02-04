@@ -50,13 +50,21 @@ class Testlaboratorio(unittest.TestCase):
     def testSumaMatrices(self):
         matrizUno,matrizDos=[[(2,6),(-1,3)],[(3,9),(2,-2)]],[[(1,4),(4,7)],[(1,1),(0,5)]]
         self.assertEqual([[(3, 10), (3, 10)], [(4, 10), (2, 3)]],laboratorio1.sumaMatrices(matrizUno,matrizDos))
+
+    def testInversaMatriz(self):
+        self.assertEqual([[(0.2, -0.4), (0.25, -0.25)], [(0.17, -0.17), (0.1, -0.1)]],laboratorio1.inversaMatrizImaginaria([[(-0.2,0.4),(-0.25,0.25)],[(-0.17,0.17),(-0.1,0.1)]]))
+     
+    def testComplejoPorMatriz(self):
+        self.assertEqual([[(0,13),(-4,32)],[(22,32),(28,10)]],laboratorio1.complejoPorMatriz((-2,3),[[(3,-2),(8,-4)],[(4,-10),(-2,-8)]]))
+
+    def testMatrizTranspuesta(self):
+        self.assertEqual([[(4,5), (0,0),(-1,0)], [(1,0),(6, -2),(0,-1)]],laboratorio1.matrizTranspuesta([[(4,5),(1,0)],[(0,0),(6,-2)],[(-1,0),(0,-1)]]))
+      
+    def testMatrizConjugada(self):
+        self.assertEqual([[(4,-5), (1,0)], [(0,0),(6,2)],[(-1,0),(0,1)]],laboratorio1.matrizConjugada([[(4,5),(1,0)],[(0,0),(6,-2)],[(-1,0),(0,-1)]]))    
     
 
-
-   
-
-
-
+    #   Faltan pruebas de las funciones productoVectoresImaginarios, matrizAdjunta,productoMatricesImaginarias,accionMatrizSobreVector, distanciaMatrices,hermitiana
 
 
 

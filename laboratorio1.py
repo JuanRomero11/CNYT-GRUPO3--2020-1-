@@ -29,7 +29,7 @@ def InversaDeUnVector(vectorInicial):
     for i in vectorInicial:
         vectorFinal+=[(-i[0],-i[1])]
     return vectorFinal
-#donde se operara un complejo(num) y vector(lis) el cual retornara un vector final(lis)
+
 def EscalarPorVector(num,lis):
     final=[]
     for i in range(len(lis)):final+=[multiplicacion(num,lis[i])]
@@ -42,6 +42,92 @@ def sumaMatrices(matInicial,matInicial2):
     return lista
 
 
+def inversaMatrizImaginaria(MatrizInicial):
+    matriz = []
+    for i in range(0,len(MatrizInicial)):
+        matriz.append(InversaDeUnVector(MatrizInicial[i]))
+    return matriz
 
+def complejoPorMatriz(c1,MatrizInicial):
+    matriz=[]
+    for i in range(0,len(MatrizInicial)):
+        vector=[]
+        for j in range(0,len(MatrizInicial[0])):
+            vector.append(multiplicacion(MatrizInicial[i][j],c1))
+        matriz.append(vector)
+    return matriz
+
+
+def matrizTranspuesta(matrizInicial):
+    matriz=[]
+    for i in range(0,len(matrizInicial[0])):
+        columna = [x[i] for x in matrizInicial]
+        matriz.append(columna)
+    return matriz 
+        
+     
+def matrizConjugada(MatrizInicial):
+    matriz=[]
+    for i in range(0,len(MatrizInicial)):
+        vector=[]
+        for j in range(0,len(MatrizInicial[0])):
+            vector.append((MatrizInicial[i][j][0],MatrizInicial[i][j][1]*-1))
+        matriz.append(vector)
+    return matriz
+''' funcion ayuda '''
+def productoVectoresImaginarios(c1,c2):
+    ini = (0,0)
+    for i in range(le(c1)):
+        suma = productoImaginarios(c1[i],c2[i])
+        ini = sumaImaginarios(ini,suma)
+    return ini
+
+def matrizAdjunta(MatrizInicial):
+    matriz=matrizTranspuesta(MatrizInicial)
+    matriz=matrizConjugada(matriz)
+    return matriz
+
+
+def productoMatricesImaginarias(MatrizInicial,m2):
+    matriz = [[None] * len(m2[0]) for i in range(len(MatrizInicial))]
+    for i in range(len(MatrizInicial)):
+        for j in range(len(m2[0])):
+            columna = [row[j] for row in m2]
+            matriz[i][j] = productoVectoresImaginarios(MatrizInicial[i],columna)
+    return matriz
+
+def accionMatrizSobreVector(v1,MatrizInicial):
+    v = []
+    for i in range(len(MatrizInicial)):    
+            v.append(productoVectoresImaginarios(v1,MatrizInicial[i]))
+    return v
+
+
+   
+
+
+def distanciaMatrices(mat1,mat2):
+    mat_fin=[[(0,0)]*len(mat1[0]) for x in range(len(mat1))]
+    for i in range(len(mat1)):
+        for j in range(len(mat1[0])):
+            mat_fin[i][j]=resta(mat1[i][j],mat2[i][j])
+    res=norma_mat(mat_fin)
+    return res
+
+# EnConstruccion
+##def unitaria(mat):
+# EnConstruccion
+##def normaMatriz(mat):
+#EnConstruccion
+##def producTensorVec(vec1,vec2):
+
+def hermitiana(mat):
+    if mat==mat_adjun(mat):
+        return True
+    else:
+        return False
+
+
+    
 
     
