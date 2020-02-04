@@ -40,6 +40,8 @@ y su respectiva prueba en el archivo testing con el nombre a la funcion que corr
         def testDeberiaErrarMultiplicacion(self):
             self.assertFalse(laboratorio1.multiplicacion((1,2), (2,3))==(-4,8))
 ```
+## Lincese 
+La licencia se púede evidenciar en [LICENSE](LICENSE) 
 ## Autor 
 
 
