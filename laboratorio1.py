@@ -74,14 +74,17 @@ def matrizConjugada(MatrizInicial):
             vector.append((MatrizInicial[i][j][0],MatrizInicial[i][j][1]*-1))
         matriz.append(vector)
     return matriz
-''' funcion ayuda '''
 def productoVectoresImaginarios(c1,c2):
     ini = (0,0)
-    for i in range(le(c1)):
-        suma = productoImaginarios(c1[i],c2[i])
-        ini = sumaImaginarios(ini,suma)
+    for i in range(len(c1)):
+        var = multiplicacion(c1[i],c2[i])
+        ini = suma(ini,var)
     return ini
-
+def accionMatrizSobreVector(v1,MatrizInicial):
+    v = []
+    for i in range(len(MatrizInicial)):    
+            v.append(productoVectoresImaginarios(v1,MatrizInicial[i]))
+    return v
 def matrizAdjunta(MatrizInicial):
     matriz=matrizTranspuesta(MatrizInicial)
     matriz=matrizConjugada(matriz)
@@ -96,49 +99,59 @@ def productoMatricesImaginarias(MatrizInicial,m2):
             matriz[i][j] = productoVectoresImaginarios(MatrizInicial[i],columna)
     return matriz
 
-def accionMatrizSobreVector(v1,MatrizInicial):
-    v = []
-    for i in range(len(MatrizInicial)):    
-            v.append(productoVectoresImaginarios(v1,MatrizInicial[i]))
-    return v
 
 
-   
-
-
+def normaMatriz(mat):
+    num1=0
+    for i in range(len(mat)):
+        for j in range(len(mat[i])):
+            x=mat[i][j]
+            num1+=(x[0]**2+x[1]**2)
+    res=round(num1**0.5,3)
+    return res
 def distanciaMatrices(mat1,mat2):
     mat_fin=[[(0,0)]*len(mat1[0]) for x in range(len(mat1))]
     for i in range(len(mat1)):
         for j in range(len(mat1[0])):
             mat_fin[i][j]=resta(mat1[i][j],mat2[i][j])
-    res=norma_mat(mat_fin)
+    res=normaMatriz(mat_fin)
     return res
 
-# EnConstruccion
-##def unitaria(mat):
-# EnConstruccion
-##def normaMatriz(mat):
-def productoTensor(matriz1,matriz2):
-    matriz = []
-    for i in range(len(matriz1)):
-        for j in range(len(matriz2)):
-            matM = [] 
-            
-            for k in range(len(matriz1[i])):
-                for y in range(len(matriz2[j])):
-                    matM.append(multiplicacion(matriz1[i][k],matriz2[j][y]))
-            matriz.append(matM)
-    
-    return matriz
 
-def hermitiana(mat):
-    if mat==mat_adjun(mat):
+def unitaria(mat):
+    mat_fin=productoMatricesImaginarias(mat,matrizAdjunta(mat))
+    mat_uni=[[(0,0)]*len(mat[0])for x in range(len(mat))]
+    for i in range(len(mat)):
+        for j in range(len(mat)):
+            if i==j:
+                mat_uni[i][j]=(1,0)
+    if mat_fin==mat_uni:
         return True
     else:
         return False
-m=[[(1/(2**(0.5)),0),(1/(2**(0.5)),0)],[(1/(2**(0.5)),0),(-1/(2**(0.5)),0)]]
-m1=[[(0,0),(1,0)],[(1,0),(0,0)]]
-print(productoTensor(m,m1))
+
+
+def hermitiana(mat):
+    if mat==matrizAdjunta(mat):
+        return True
+    else:
+        return False
+
+
+def productoTensor(m1,m2):
+    matriz = []
+    for i in range(len(m1)):
+        matM = [[]] *len(m2)
+        for j in range(len(m1[i])):
+            m3 = complejoPorMatriz(m1[i][j],m2)
+            for k in range(len(m2)):
+                
+                matM[k] = matM[k] + m3[k]
+        for k in range(len(m2)):
+            matriz.append(matM[k])
+    return matriz
+
+
 
 
     

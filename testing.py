@@ -62,26 +62,34 @@ class Testlaboratorio(unittest.TestCase):
       
     def testMatrizConjugada(self):
         self.assertEqual([[(4,-5), (1,0)], [(0,0),(6,2)],[(-1,0),(0,1)]],laboratorio1.matrizConjugada([[(4,5),(1,0)],[(0,0),(6,-2)],[(-1,0),(0,-1)]]))    
-    
 
-    #   Faltan pruebas de las funciones productoVectoresImaginarios, matrizAdjunta,productoMatricesImaginarias,accionMatrizSobreVector, distanciaMatrices,hermitiana
+    def testMatrizAdjunta(self):
+        res=[[(1, 2), (5, 6)], [(-3, -4), (-7, -8)]]
+        rescod=laboratorio1.matrizAdjunta([[(1,-2),(-3,4)],[(5,-6),(-7,8)]])
+        self.assertEqual(res,rescod)
 
-    def testProductoTensor(self):
-        oo=[[(1,0)],[(0,0)],[(0,0)],[(0,0)]]
-        h=[[(1/(2**0.5),0)],[(1/(2**0.5),0)],[(1/(2**0.5),0)],[(-1/(2**0.5),0)]]
-        x=[[(0,0),(1,0)],[(1,0),(0,0)]]
-      
+    def testProductroMatrices(self):
+        self.assertEqual([[(9,6), (5,-4)], [(10, 30), (0,0)],[(4,1),(0,1)]],laboratorio1.productoMatricesImaginarias([[(4,5),(1,0)],[(0,0),(6,-2)],[(-1,0),(0,-1)]],[[(1,-1),(0,-1)],[(0,5),(0,0)]]))
 
+    def testAccionMatrizVector(self):
+        self.assertEqual([(9, -3), (-15, 0)],laboratorio1.accionMatrizSobreVector([(-3,1),(5,0)],[[(2,0),(3,-1)],[(3,1),(-1,0)]]))
 
+    def testNormaMatriz(self):
+        self.assertEqual(16.492,laboratorio1.normaMatriz([[(4,5),(6,7)],[(8,9),(0,-1)]]))
 
+    def testDistanciaMatrices(self):
+        self.assertEqual(12.923,laboratorio1.distanciaMatrices([[(2,6),(-1,3)],[(3,9),(2,-2)]],[[(1,4),(4,7)],[(1,1),(0,5)]]))
 
+    def testUnitaria(self):
+        self.assertEqual(True,laboratorio1.unitaria([[(1,0),(0,0)],[(0,0),(1,0)]]))
 
+    def testHermitiana(self):
+        self.assertEqual(True,laboratorio1.hermitiana([[(1,0),(0,0)],[(0,0),(1,0)]]))
 
-
-
-
-
-    
+    def tesProductoTensor(self):
+        m=[[(1,1),(0,0)],[(1,0),(0,1)]]
+        m1=[[(-1,2),(-2,-2),(0,2)],[(2,3),(3,1),(2,2)],[(-2,1),(1,-1),(2,1)]]
+        self.assertEqual([[(-3, 1), (0, -4), (-2, 2), (0, 0), (0, 0), (0, 0)], [(-1, 5), (2, 4), (0, 4), (0, 0), (0, 0), (0, 0)], [(-3, -1), (2, 0), (1, 3), (0, 0), (0, 0), (0, 0)], [(-1, 2), (-2, -2), (0, 2), (-2, -1), (2, -2), (-2, 0)], [(2, 3), (3, 1), (2, 2), (-3, 2), (-1, 3), (-2, 2)], [(-2, 1), (1, -1), (2, 1), (-1, -2), (1, 1), (-1, 2)]],laboratorio1.productoTensor(m,m1))   
 
 if __name__ == "__main__":
     unittest.main()
