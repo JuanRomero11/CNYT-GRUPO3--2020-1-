@@ -1,16 +1,55 @@
 # Libreria de numeros complejos
-En este repositorio se podra encontrar y utilizar las siguientes operaciones
-_Ademas se ha agregador una segunda parte en esta libreria la cual con lleva:_
+En este repositorio se podra encontrar y utilizar las siguientes operaciones:
 
-_Adición de vectores complejos._
+- Suma de numeros complejos
 
-_Inversa de vectores complejos._
+- Producto de numeros complejos
 
-_Multiplicación escalar de vectores complejos._
+- Resta de numeros complejos
 
-_Adición de matrices complejos._
+- División de numeros complejos
 
-_Inversa de matrices complejos._
+- Módulo de numeros complejos
+
+- Conjugado de numeros complejos
+
+- Conversión entre representaciones polar y cartesiano
+
+- fase de un número complejo.
+
+- Adición de vectores complejos.
+
+- Inverso (aditivo) de un vector complejo.
+
+- Multiplicación de un escalar por un vector complejo.
+
+- Adición de matrices complejas.
+
+- Inversa (aditiva) de una matriz compleja.
+
+- Multiplicación de un escalar por una matriz compleja.
+
+- Transpuesta de una matriz/vector
+
+- Conjugada de una matriz/vector
+
+- Adjunta (daga) de una matriz/vector
+
+- Producto de dos matrices (de tamaños compatibles)
+
+- Función para calcular la "acción" de una matriz sobre un vector.
+
+- Producto interno de dos vectores
+
+- Norma de un vector
+
+- Distancia entre dos vectores
+
+- Revisar si una matriz es unitaria
+
+- Revisar si una matriz es Hermitiana
+
+- Producto tensor de dos matrices/vectores
 
 ## Instalacion
 Si aun no esta instalado una version mayor o igual 3.5 del programa Python, se tendra que ehacer la respectiva instalacion.
