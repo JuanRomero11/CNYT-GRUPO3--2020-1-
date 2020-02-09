@@ -1,87 +1,86 @@
-# Libreria de numeros complejos
-En este repositorio se podra encontrar y utilizar las siguientes operaciones:
+# Library of complex numbers
+In this repository you can find and use the following operations:
 
-- Suma de numeros complejos
+- Sum of complex numbers
 
-- Producto de numeros complejos
+- Product of complex numbers
 
-- Resta de numeros complejos
+- Subtraction of complex numbers
 
-- División de numeros complejos
+- Division of complex numbers
 
-- Módulo de numeros complejos
+- Complex numbers module
 
-- Conjugado de numeros complejos
+- Conjugate of complex numbers
 
-- Conversión entre representaciones polar y cartesiano
+- Conversion between polar and Cartesian representations
 
-- fase de un número complejo.
+- phase of a complex number.
 
-- Adición de vectores complejos.
+- Adding complex vectors.
 
-- Inverso (aditivo) de un vector complejo.
+- Inverse (additive) of a complex vector.
 
-- Multiplicación de un escalar por un vector complejo.
+- Multiplication of a scalar by a complex vector.
 
-- Adición de matrices complejas.
+- Adding complex matrices.
 
-- Inversa (aditiva) de una matriz compleja.
+- Reverse (additive) of a complex matrix.
 
-- Multiplicación de un escalar por una matriz compleja.
+- Multiplication of a scalar by a complex matrix.
 
-- Transpuesta de una matriz/vector
+- Transpose of a matrix / vector
 
-- Conjugada de una matriz/vector
+- Conjugate of a matrix / vector
 
-- Adjunta (daga) de una matriz/vector
+- Attach (dagger) of a matrix / vector
 
-- Producto de dos matrices (de tamaños compatibles)
+- Product of two matrices (of compatible sizes)
 
-- Función para calcular la "acción" de una matriz sobre un vector.
+- Function to calculate the "action" of a matrix on a vector.
 
-- Producto interno de dos vectores
+- Internal product of two vectors
 
-- Norma de un vector
+- Standard of a vector
 
-- Distancia entre dos vectores
+- Distance between two vectors
 
-- Revisar si una matriz es unitaria
+- Check if a matrix is unitary
 
-- Revisar si una matriz es Hermitiana
+- Check if a matrix is Hermitian
 
-- Producto tensor de dos matrices/vectores
+- Tensioning product of two matrices / vectors
 
-## Instalacion
-Si aun no esta instalado una version mayor o igual 3.5 del programa Python, se tendra que ehacer la respectiva instalacion.
-En este espacio se podra encontrar la version y el programa antes mencionado https://www.python.org/downloads/.
+# Installation
+If a version greater than or equal to 3.5 of the Python program is not installed yet, the respective installation will have to be done.
+In this space you can find the version and the aforementioned program https://www.python.org/downloads/.
 
-## Como funciona
-Cada funcion tiene su respectiva documentacion con la cual se podra guiar para dar un adecuado uso a cada metodo implementado para resivir una o varias tuplas las cuales daran una representacion de un numero ya sea complejo o no.
+# How does it work
+Each function has its respective documentation with which it can be guided to give adequate use to each method implemented to live one or more tuples which will give a representation of a number, whether complex or not.
 
-# Ejecutando las pruebas
-En el archivo .py llamado laboratorio1 se encuentran los diferentes metodos correspondientes donde se puede evidenciar la logica que se utilizo para desarrollar la operacion.
-```
-		from sys import stdin
-    import math
-		def multiplicacion(a,b):
-    return (a[0]*b[0]-a[1]*b[1],a[0]*b[1]+a[1]*b[0])
-		
-```
-y su respectiva prueba en el archivo testing con el nombre a la funcion que corresponde en el archivo de laboratorio1.py
-```
-		from sys import stdin
-    import unittest
-    import laboratorio1
-    class Testlaboratorio(unittest.TestCase):
-        def testMultiplicacion(self):
-            self.assertEqual(laboratorio1.multiplicacion((1,2), (2,3)), (-4,7))
+# Running the tests
+In the .py file called laboratory1 there are the different corresponding methods where the logic that was used to develop the operation can be evidenced.
+``
+from sys import stdin
+    import math
+def multiplication (a, b):
+    return (a [0] * b [0] -a [1] * b [1], a [0] * b [1] + a [1] * b [0])
 
-        def testDeberiaErrarMultiplicacion(self):
-            self.assertFalse(laboratorio1.multiplicacion((1,2), (2,3))==(-4,8))
-```
-## Lincese 
-La licencia se púede evidenciar en [LICENSE](LICENSE) 
-## Autor 
+``
+and its respective test in the testing file with the name of the corresponding function in the laboratory file1.py
+``
+from sys import stdin
+    import unittest
+    import lab1
+    class Testlaboratory (unittest.TestCase):
+        def testMultiplication (self):
+            self.assertEqual (laboratory1.multiplication ((1,2), (2,3)), (-4,7))
 
+        def testDeberiaErrarMultiplicacion (self):
+            self.assertFalse (laboratory1.multiplication ((1,2), (2,3)) == (- 4,8))
+``
+# Lincese
+The license can be evidenced in [LICENSE](LICENSE)
 
+# Author
 ### _JUAN GUILLERMO ROMERO_
