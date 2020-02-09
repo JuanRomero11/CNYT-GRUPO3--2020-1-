@@ -60,25 +60,27 @@ Each function has its respective documentation with which it can be guided to gi
 
 # Running the tests
 In the .py file called laboratory1 there are the different corresponding methods where the logic that was used to develop the operation can be evidenced.
-``
+
+```
 from sys import stdin
     import math
-def multiplication (a, b):
+def multiplicacion (a, b):
     return (a [0] * b [0] -a [1] * b [1], a [0] * b [1] + a [1] * b [0])
+```
 
-``
-and its respective test in the testing file with the name of the corresponding function in the laboratory file1.py
-``
+and its respective test in the testing file with the name of the corresponding function in the laboratorio1.py
+
+```
 from sys import stdin
-    import unittest
-    import lab1
-    class Testlaboratory (unittest.TestCase):
-        def testMultiplication (self):
-            self.assertEqual (laboratory1.multiplication ((1,2), (2,3)), (-4,7))
+    import unittest
+    import laboratorio1
+    class Testlaboratorio(unittest.TestCase):
+        def testMultiplicacion(self):
+            self.assertEqual(laboratorio1.multiplicacion((1,2), (2,3)), (-4,7))
 
-        def testDeberiaErrarMultiplicacion (self):
-            self.assertFalse (laboratory1.multiplication ((1,2), (2,3)) == (- 4,8))
-``
+        def testDeberiaErrarMultiplicacion(self):
+            self.assertFalse(laboratorio1.multiplicacion((1,2), (2,3))==(-4,8))
+```
 # Lincese
 The license can be evidenced in [LICENSE](LICENSE)
 
